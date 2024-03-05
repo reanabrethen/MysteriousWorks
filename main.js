@@ -1,13 +1,11 @@
-//targets the whole browser & will play when loaded
+// targets the whole browser & will play when loaded
 // window.addEventListener("DOMContentLoaded", () =>{
 //     const museumMusic = new Audio('sounds/Liebestraum.mp3')
 //     museumMusic.volume = 0.1
 //     museumMusic.play()
 // })
 
-let artworkDisply = document.querySelector('#art-display')
 
-const nextButton = document.querySelector('.next')
 
 
 // nextButton.addEventListener('click', ()=>{
@@ -36,43 +34,46 @@ const nextButton = document.querySelector('.next')
         console.log(artObj.data)
         //target array w/in obj and assign to variable
         const dataInArtObj = artObj.data
+        //create an empty variable to push links of images into
         let imgId = []
-       dataInArtObj.forEach(artwork =>{
+        dataInArtObj.forEach(artwork =>{
             imgId.push(`https://www.artic.edu/iiif/2/${artwork.image_id}/full/843,/0/default.jpg`)
        })
        console.log(imgId)
-
-            
-            // return fetch(imageAPI)
+        let artworkDisplay = document.querySelector('#art-display')
+        
+        for(let i = 0; i < dataInArtObj.length;)
+        if(dataInArtObj){
+            artworkDisplay.innerHTML = imgId[]
         }
-        
-        // dataInArtObj.forEach(image => {
-        //     image = `${artObj.data.image_id}`
-        // })
-        
-        
-               
-    )
-    
-    // let image = `${artObj.data.image_id}`
-    //     
-
-    // for(let i = 0; i < dataInArtObj.length; i++){
-    //     dataInArtObj[i] = `${artObj.data.image_id}`
-    //     let artImage = dataInArtObj[i]
-
-    .then((response)=>{
-        console.log('response logged here')
-        return response.json()
     })
 
-    // for(let i = 0; i < artObj.length; i++){
-    //     artObj[i] = artObj.data.image_id
-    //     console.log(artObj)  
-        
-    // for(data in artObj){
-    //     for(let i = 0; i < data.length; i++){
-    //     console.log(data[i])
+    const nextButton = document.querySelector('.next')
+    const previousButton = document.querySelector('.previous')
+
+    //create event listeners for both buttons to move through array
+    // previous button increment down 1 arr of links
+    // next button increment up 1 arr of links
+
+    nextButton.addEventListener('click', ()=>{
+        console.log('next')
+        for(let image of imgId){
+            image++
+        }
+    })
+
+    previousButton.addEventListener('click', ()=>{
+        console.log('previous')
+    })
+
+
+
+      
+
+    
+
+  
+
         
          // let imgId = artObj.data[0].image_id
         // const artImg = artObj.config.website_url + '/'
