@@ -36,10 +36,14 @@ const nextButton = document.querySelector('.next')
         console.log(artObj.data)
         //target array w/in obj and assign to variable
         const dataInArtObj = artObj.data
-       dataInArtObj
+        let imgId = []
+       dataInArtObj.forEach(artwork =>{
+            imgId.push(`https://www.artic.edu/iiif/2/${artwork.image_id}/full/843,/0/default.jpg`)
+       })
+       console.log(imgId)
 
-            let imageAPI = `https://www.artic.edu/iiif/2/${artImage}/full/843,/0/default.jpg`
-            return fetch(imageAPI)
+            
+            // return fetch(imageAPI)
         }
         
         // dataInArtObj.forEach(image => {
