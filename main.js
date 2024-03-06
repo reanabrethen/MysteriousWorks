@@ -50,26 +50,29 @@ const chicagoArtMuseumAPI = "https://api.artic.edu/api/v1/artworks?fields=id,tit
         // // previous button increment down 1 arr of links
         // // next button increment up 1 arr of links
     
+       let currentArtwork = 0
+       let maxArtwork = 12
+
         nextButton.addEventListener('click', ()=>{
             console.log('next')
-            let artIndex = 1
-                if(artIndex < imgId.length){
-                    artIndex++
-                    artworkDisplay.src = imgId[artIndex]
+                if(currentArtwork < maxArtwork){
+                   currentArtwork++
+                    artworkDisplay.src = imgId[currentArtwork]
 
                 }
         })
             previousButton.addEventListener('click', ()=>{
-                console.log('next')
-                let artIndex = 1
-                    if(artIndex < imgId.length){
-                        artIndex--
-                        artworkDisplay.src = imgId[artIndex]
+                console.log('previous')
+                if(currentArtwork > 0){
+                    currentArtwork--
+                    artworkDisplay.src = imgId[currentArtwork]
+                }
+                
     
                     }
-                }
-    )})
-    
+                )
+                })
+                
 
 
 
