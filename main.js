@@ -53,6 +53,15 @@ const chicagoArtMuseumAPI = "https://api.artic.edu/api/v1/artworks?fields=id,tit
        console.log(imgId)
         let artworkDisplay = document.querySelector('#art-display')
         
+        let artIndex = 0
+        setInterval(()=>{
+            if(artIndex === imgId.length){
+                artIndex = 0
+            }
+            artworkDisplay.src = imgId[artIndex]
+            artIndex++
+        }, 5000)
+
 
         
     })
