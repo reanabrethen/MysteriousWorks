@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script> -->
+    <script src="https://kit.fontawesome.com/dfb53949d7.js" crossorigin="anonymous" defer></script>
     <script src="main.js" defer></script>
     <title>Mysterious Works</title>
 </head>
@@ -27,17 +26,17 @@
         <div class="artworks">
             <img id="art-display" src="https://www.artic.edu/iiif/2/2193cdda-2691-2802-0776-145dee77f7ea/full/400,/0/default.jpg"  alt="artworks"/>
         </div>
-        <div class="buttons">
+        <div id="buttons">
             <button class="previous">Previous</button>
             <button class="next">Next</button>
         </div>
-        <div class="information-display">
-            <div class="title"></div>
-            <div class="date-start"></div>
-            <div class="date-end"></div>
-            <div class="artist-title"></div>
-            <div class="place-of-orgin"></div>
-            <div class="medium-display"></div>
+        <div id="information-display">
+            <div class="title">Title: 'Interior En Niza'</div>
+            <div class="artist-title">Artist: Henri Matisse</div>
+            <div class="date-start">Start Date: 1919</div>
+            <div class="date-end">End Date: 1920</div>
+            <div class="place-of-origin">Place: France</div>
+            <div class="medium-display">Medium: Oil on canvas</div>
             
         </div>
 
@@ -49,12 +48,13 @@
 
 
 
-
+ 
 <h6> Music: 'Liebestraum' - Franz Liszt</h6>
+    <div id="music">
+        <i id="play" class="fa-regular fa-circle-play fa-2xs"></i>
+        <i id="pause" class="fa-solid fa-circle-pause fa-2xs"></i>
+</div>
     <audio loop="true" src="sounds/Liebestraum.mp3"></audio>
-    <button id="play">Play</button>
-    <button id="pause">Pause</button>
-    
 </body>
 </html>
 

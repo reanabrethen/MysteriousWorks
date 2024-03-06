@@ -36,19 +36,39 @@ const chicagoArtMuseumAPI = "https://api.artic.edu/api/v1/artworks?fields=id,tit
         //target array w/in obj and assign to variable
         const dataInArtObj = artObj.data
         //create an empty variable to push links of images into
-        let imgId = []
+        let imgId = ['https://www.artic.edu/iiif/2/2193cdda-2691-2802-0776-145dee77f7ea/full/400,/0/default.jpg'] //PUT SRC OF DEFAULT IN AND THEN PUSH WILL DISPLAY OTHER IMAGES
         dataInArtObj.forEach(artwork =>{
             imgId.push(`https://www.artic.edu/iiif/2/${artwork.image_id}/full/400,/0/default.jpg`)
        })
        console.log(imgId)
-      
-        
+          
     let artworkDisplay = document.querySelector('#art-display')
 
-    //HELPER FUNCTION FOR DISPLAYING ARTWORK 
+    const title = document.querySelector('.title')
+    const artistName = document.querySelector('.artist-title')
+    const startDate = document.querySelector('.date-start')
+    const endDate = document.querySelector('.date-end')
+    const placeOfOrigin = document.querySelector('.place-of-origin')
+    const artMedium = document.querySelector('.medium-display')
+
+    //HELPER FUNCTION FOR DISPLAYING ARTWORK & CAN UPDATE ALL INFO AT THE SAME TIME
     function updateScreen(){
         artworkDisplay.src = imgId[currentArtwork]
+        
+        
+        dataInArtObj.forEach(currentArtwork =>{
+            if(artworkDisplay !== currentArtwork){
+            title.innerHTML = `Title: ${currentArtwork.title}`
+            artistName.innerHTML = `Artist: ${currentArtwork.artist_title}`
+            startDate.innerHTML = `Start Date : ${currentArtwork.date_start}`
+            endDate.innerHTML = `End Date: ${currentArtwork.date_end}`
+            placeOfOrigin.innerHTML = `Place: ${currentArtwork.place_of_origin}`
+            artMedium.innerHTML = `Medium: ${currentArtwork.medium_display}`
+            }
+        })
     }
+       
+    
         const nextButton = document.querySelector('.next')
         const previousButton = document.querySelector('.previous')
     
@@ -57,35 +77,30 @@ const chicagoArtMuseumAPI = "https://api.artic.edu/api/v1/artworks?fields=id,tit
         // // next button increment up 1 arr of links
     
        let currentArtwork = 0
-       let maxArtwork = 11
-
         nextButton.addEventListener('click', ()=>{
             console.log('next')
-                if(currentArtwork < maxArtwork){
-                   currentArtwork++
-                    updateScreen()
-                }
+                currentArtwork++
+            if(currentArtwork >= imgId.length){
+                currentArtwork = 0
+            } 
+            updateScreen()    
         })
             previousButton.addEventListener('click', ()=>{
                 console.log('previous')
-                if(currentArtwork > 0){
-                    currentArtwork--
-                    updateScreen()
-                }
-            })
-        })
+                currentArtwork --
+                if(currentArtwork < 0){
+                    currentArtwork = imgId.length - 1
+                } updateScreen()
+         })
+         
+    })
+        .catch((error) => console.log(error))
                 
 
 
 
 
-        const title = document.querySelector('.title')
-        const startDate = document.querySelector('.date-start')
-        const endDate = document.querySelector('.date-end')
-        const artistName = document.querySelector('.artist-title')
-        const placeOfOrgin = document.querySelector('.place-of-orgin')
-        const artMedium = document.querySelector('.medium-display')
-
+       
         //automatically display images
         // let artIndex = 0
         // setInterval(()=>{
@@ -106,5 +121,4 @@ const chicagoArtMuseumAPI = "https://api.artic.edu/api/v1/artworks?fields=id,tit
     //possibly set intervals and/or timeout for automatic scrolling through artwork
     //in Readme, use buttons as stretch goals?
     //clean up code --> offer a link to actual museum in navbar?
-    //
-
+    
