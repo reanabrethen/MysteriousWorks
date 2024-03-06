@@ -41,8 +41,14 @@ const chicagoArtMuseumAPI = "https://api.artic.edu/api/v1/artworks?fields=id,tit
             imgId.push(`https://www.artic.edu/iiif/2/${artwork.image_id}/full/400,/0/default.jpg`)
        })
        console.log(imgId)
-        let artworkDisplay = document.querySelector('#art-display')
+      
         
+    let artworkDisplay = document.querySelector('#art-display')
+
+    //HELPER FUNCTION FOR DISPLAYING ARTWORK 
+    function updateScreen(){
+        artworkDisplay.src = imgId[currentArtwork]
+    }
         const nextButton = document.querySelector('.next')
         const previousButton = document.querySelector('.previous')
     
@@ -51,27 +57,23 @@ const chicagoArtMuseumAPI = "https://api.artic.edu/api/v1/artworks?fields=id,tit
         // // next button increment up 1 arr of links
     
        let currentArtwork = 0
-       let maxArtwork = 12
+       let maxArtwork = 11
 
         nextButton.addEventListener('click', ()=>{
             console.log('next')
                 if(currentArtwork < maxArtwork){
                    currentArtwork++
-                    artworkDisplay.src = imgId[currentArtwork]
-
+                    updateScreen()
                 }
         })
             previousButton.addEventListener('click', ()=>{
                 console.log('previous')
                 if(currentArtwork > 0){
                     currentArtwork--
-                    artworkDisplay.src = imgId[currentArtwork]
+                    updateScreen()
                 }
-                
-    
-                    }
-                )
-                })
+            })
+        })
                 
 
 
@@ -99,33 +101,10 @@ const chicagoArtMuseumAPI = "https://api.artic.edu/api/v1/artworks?fields=id,tit
     // })
 
 
+
+    //IDEAS FOR LATER
     //possibly set intervals and/or timeout for automatic scrolling through artwork
     //in Readme, use buttons as stretch goals?
-
-
-  
-    previousButton.addEventListener('click', ()=>{
-        console.log('previous')
-    })
-
-
-
-      
-
-    
-
-  
-
-        
-         // let imgId = artObj.data[0].image_id
-        // const artImg = artObj.config.website_url + '/'
-        // //to change the art URL to the next art image from the API
-        // let artId = artObj.data[0].id 
-        // //loop through arr 
-        
-        // artworkDisply.src = artImg + artId
-        // console.log(artworkDisply.src)
-        // artImages.src = artObj.message
-    
-// })
+    //clean up code --> offer a link to actual museum in navbar?
+    //
 
