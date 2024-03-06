@@ -9,7 +9,6 @@ window.addEventListener("DOMContentLoaded", () =>{
 //create pause/play button for users to choose option for no music
 const playButton = document.querySelector('#play')
 const pauseButton = document.querySelector('#pause')
-let interval 
 
 playButton.addEventListener('click', ()=>{
    museumMusic.play()
@@ -17,21 +16,12 @@ playButton.addEventListener('click', ()=>{
 pauseButton.addEventListener('click', ()=>{
     museumMusic.pause()
 })
-
-
-//     const artImages = document.querySelector('#art-display')
-//     const title = document.querySelector('.title')
-//     const startDate = document.querySelector('.date-start')
-//     const endDate = document.querySelector('.date-end)
-//     const artistName = document.querySelector('.artist-title')
-//     const placeOfOrgin = document.querySelector('.place-of-orgin')
-//     const artMedium = document.querySelector('.medium-display')
-    
-    
+  
+//API 
 const chicagoArtMuseumAPI = "https://api.artic.edu/api/v1/artworks?fields=id,title,artist_title,date_start,date_end,image_id,medium_display,place_of_origin"
     
 
-
+//call API
     fetch(chicagoArtMuseumAPI)
     .then((information)=>{
         console.log('information received')
@@ -48,53 +38,72 @@ const chicagoArtMuseumAPI = "https://api.artic.edu/api/v1/artworks?fields=id,tit
         //create an empty variable to push links of images into
         let imgId = []
         dataInArtObj.forEach(artwork =>{
-            imgId.push(`https://www.artic.edu/iiif/2/${artwork.image_id}/full/843,/0/default.jpg`)
+            imgId.push(`https://www.artic.edu/iiif/2/${artwork.image_id}/full/400,/0/default.jpg`)
        })
        console.log(imgId)
         let artworkDisplay = document.querySelector('#art-display')
         
-        let artIndex = 0
-        setInterval(()=>{
-            if(artIndex === imgId.length){
-                artIndex = 0
-            }
-            artworkDisplay.src = imgId[artIndex]
-            artIndex++
-        }, 5000)
+        const nextButton = document.querySelector('.next')
+        const previousButton = document.querySelector('.previous')
+    
+        // //create event listeners for both buttons to move through array
+        // // previous button increment down 1 arr of links
+        // // next button increment up 1 arr of links
+    
+        nextButton.addEventListener('click', ()=>{
+            console.log('next')
+            let artIndex = 1
+                if(artIndex < imgId.length){
+                    artIndex++
+                    artworkDisplay.src = imgId[artIndex]
+
+                }
+        })
+            previousButton.addEventListener('click', ()=>{
+                console.log('next')
+                let artIndex = 1
+                    if(artIndex < imgId.length){
+                        artIndex--
+                        artworkDisplay.src = imgId[artIndex]
+    
+                    }
+                }
+    )})
+    
+
+
+
+
+        const title = document.querySelector('.title')
+        const startDate = document.querySelector('.date-start')
+        const endDate = document.querySelector('.date-end')
+        const artistName = document.querySelector('.artist-title')
+        const placeOfOrgin = document.querySelector('.place-of-orgin')
+        const artMedium = document.querySelector('.medium-display')
+
+        //automatically display images
+        // let artIndex = 0
+        // setInterval(()=>{
+        //     if(artIndex === imgId.length){
+        //         artIndex = 0
+        //     }
+        //     artworkDisplay.src = imgId[artIndex]
+        //     artIndex++
+        // }, 5000)
 
 
         
-    })
+    // })
 
 
     //possibly set intervals and/or timeout for automatic scrolling through artwork
     //in Readme, use buttons as stretch goals?
 
 
-//possible infite loop
-        // for(let i = 0; i < dataInArtObj.length; i++)
-        // if(dataInArtObj){
-        //     artworkDisplay.innerHTML = imgId
-        // }
-
-
-    // const nextButton = document.querySelector('.next')
-    // const previousButton = document.querySelector('.previous')
-
-    // //create event listeners for both buttons to move through array
-    // // previous button increment down 1 arr of links
-    // // next button increment up 1 arr of links
-
-    // nextButton.addEventListener('click', ()=>{
-    //     console.log('next')
-    //     for(let image of imgId){
-    //         image++
-    //     }
-    // })
-
-    // previousButton.addEventListener('click', ()=>{
-    //     console.log('previous')
-    // })
+  
+    previousButton.addEventListener('click', ()=>{
+        console.log('previous')
+    })
 
 
 
