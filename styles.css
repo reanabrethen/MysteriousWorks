@@ -33,6 +33,8 @@ h1 {
 
 .artworks {
     border: 2px crimson solid;
+    width: 50%;
+    height: 50%;
     
 }
 
