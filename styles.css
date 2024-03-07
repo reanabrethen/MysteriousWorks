@@ -45,6 +45,7 @@ h1 {
     margin-right: auto;
     display: block;
     text-align: center;
+    cursor: pointer;
 }
 
 #art-display{
@@ -64,22 +65,48 @@ h6 {
     font-family: 'Times New Roman', Times, serif;
 }
 
+#music {
+    color: yellow;
+    cursor: pointer;
+}
+
+
+hr {
+    background-color: crimson;
+    border-color: crimson;
+    height: 2px;
+}
+
+footer {
+    text-align: center;
+    font-size: 1rem;
+}
+
+a {
+    color: yellow;
+}
+
+a:hover {
+    color:goldenrod;
+}
+
+
+
+
 @media (max-width: 600px){
     .artworks {
         border: 2px crimson solid;
         width: 100%;
-       
-        
     }
     
-#art-display{
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-}
+    #art-display{
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
 }
 
-/* @media (min-width: 768px){
+@media (max-width: 768px){
     .artworks {
         border: 2px crimson solid;
         width: 100%;
@@ -92,13 +119,13 @@ h6 {
         }
        
         
-    } */
+    }
+/* 
 
-
-/* @media (min-width: 601px){
+@media (max-width: 601px){
     .artworks {
         border: 2px crimson solid;
-        width: 100%;
+        width: 40%;
     }
 
         #art-display{
