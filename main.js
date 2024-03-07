@@ -18,8 +18,7 @@ pauseButton.addEventListener('click', ()=>{
 })
   
 //API 
-const chicagoArtMuseumAPI = "https://api.artic.edu/api/v1/artworks?fields=id,title,artist_title,date_start,date_end,image_id,medium_display,place_of_origin"
-    
+const chicagoArtMuseumAPI = "https://api.artic.edu/api/v1/artworks?fields=id,title,artist_title,date_start,date_end,place_of_origin,image_id,medium_display?page=7&limit=100"
 
 //call API
     fetch(chicagoArtMuseumAPI)
@@ -36,7 +35,7 @@ const chicagoArtMuseumAPI = "https://api.artic.edu/api/v1/artworks?fields=id,tit
         //target array w/in obj and assign to variable
         const dataInArtObj = artObj.data
         //create an empty variable to push links of images into
-        let imgId = ['https://www.artic.edu/iiif/2/2193cdda-2691-2802-0776-145dee77f7ea/full/400,/0/default.jpg'] //PUT SRC OF DEFAULT IN AND THEN PUSH WILL DISPLAY OTHER IMAGES
+        let imgId = ['https://www.artic.edu/iiif/2/e9213c4f-f65f-612b-2992-f80fae8a3682/full/400,/0/default.jpg'] //PUT SRC OF DEFAULT IN AND THEN PUSH WILL DISPLAY OTHER IMAGES
         dataInArtObj.forEach(artwork =>{
             imgId.push(`https://www.artic.edu/iiif/2/${artwork.image_id}/full/400,/0/default.jpg`)
        })

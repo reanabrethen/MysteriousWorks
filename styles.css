@@ -64,3 +64,49 @@ h6 {
     font-family: 'Times New Roman', Times, serif;
 }
 
+@media (max-width: 600px){
+    .artworks {
+        border: 2px crimson solid;
+        width: 100%;
+       
+        
+    }
+    
+#art-display{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+}
+
+/* @media (min-width: 768px){
+    .artworks {
+        border: 2px crimson solid;
+        width: 100%;
+        }
+
+        #art-display{
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+       
+        
+    } */
+
+
+/* @media (min-width: 601px){
+    .artworks {
+        border: 2px crimson solid;
+        width: 100%;
+    }
+
+        #art-display{
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+        }
+         */
+    
+    
