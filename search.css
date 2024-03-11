@@ -1,0 +1,127 @@
+body {
+    background-color: black;
+    color:rgb(7, 7, 157);
+    font-family: 'Tangerine', serif;
+    font-size: 48px;
+}
+
+
+#nav-bar {
+    background-color: transparent;
+    position: relative;
+    font-size: 30px;
+    float: right;
+}
+
+.img-fluid{
+    width: 100%;
+    height: 300px;
+}
+
+.artist-credit {
+    color: whitesmoke;
+    font-size: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+h1 {
+    text-align: center;
+}
+
+.welcome {
+    font-size: 2rem;
+    text-align: left;
+}
+
+
+.artworks {
+    border: 2px lawngreen solid;
+    width: 30%;
+    height: 30%;
+    position: relative;
+    margin: auto;
+    
+}
+
+#buttons {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+}
+
+#art-display{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#information-display {
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+h6 {
+    font-size: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    color: peachpuff;
+}
+
+#music {
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+
+hr {
+    background-color: lawngreen;
+    border-color: lawngreen;
+    height: 2px;
+}
+
+footer {
+    text-align: center;
+    font-size: 1rem;
+}
+
+a {
+    color: whitesmoke;
+}
+
+a:hover {
+    color:peachpuff;
+}
+
+
+
+
+@media (max-width: 600px){
+    .artworks {
+        border: 2px lawngreen solid;
+        width: 100%;
+    }
+    
+    #art-display{
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+}
+
+
+@media (max-width: 768px){
+    .artworks {
+        border: 2px lawngreen solid;
+        width: 100%;
+        }
+
+        #art-display{
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+       
+        
+    }

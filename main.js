@@ -1,3 +1,4 @@
+//declare music variable for browser
 const museumMusic = new Audio('sounds/Liebestraum.mp3')
 
 // targets the whole browser & will play when loaded
@@ -105,6 +106,12 @@ const chicagoArtMuseumAPI = "https://api.artic.edu/api/v1/artworks?fields=id,tit
    
         .catch((error) => console.log(error))
     })    
+
+
+
+
+
+
 
 
 

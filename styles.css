@@ -3,12 +3,18 @@ body {
     color: aquamarine;
     font-family: 'Tangerine', serif;
     font-size: 48px;
-    /* text-shadow: 4px 4px 4px #aaa; */
 }
 
 .head{
     position: relative;
     padding: 0;
+}
+
+#nav-bar {
+    background-color: transparent;
+    position: relative;
+    font-size: 30px;
+    float: right;
 }
 
 .img-fluid{
@@ -28,7 +34,6 @@ h1 {
 .welcome {
     font-size: 2rem;
     text-align: center;
-    
 }
 
 .artworks {
